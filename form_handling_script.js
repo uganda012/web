@@ -5,11 +5,11 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
     const password = document.getElementById("erf_password").value;
 
     if (!email || !password) {
-        alert("Пожалуйста, заполните все поля!");
+        alert("Please fill out all fields!");
         return;
     }
 
-    // Отправка данных на сервер
+    // Sending data to the server
     fetch('http://localhost:3000/submit', {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -17,7 +17,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Ошибка на сервере: ' + response.statusText);
+            throw new Error('Server error: ' + response.statusText);
         }
         return response.text();
     })
@@ -26,13 +26,13 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
         document.body.style.backgroundColor = "white";  
 
         const message = document.createElement('div');
-        message.textContent = 'Данные успешно отправлены!';
+        message.textContent = 'Data successfully sent!';
         document.body.appendChild(message);
     })
     .catch(error => {
         console.error('Error:', error);  
         const message = document.createElement('div');
-        message.textContent = 'Произошла ошибка: ' + error.message;
+        message.textContent = 'An error occurred: ' + error.message;
         message.style.color = 'red';
         document.body.appendChild(message);
     });
